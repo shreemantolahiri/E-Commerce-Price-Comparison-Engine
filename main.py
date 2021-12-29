@@ -6,9 +6,9 @@ HEADERS={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537
 def getPrice():
     page= requests.get(URL,headers=HEADERS)
 
-    # print(htmlcontent)
+    
     soup=BeautifulSoup(page.content,'html.parser')
-    # print(soup.prettify)
+    
     title=soup.find(class_= "a-price-whole").get_text()
     
     print(title)
