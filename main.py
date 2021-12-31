@@ -9,6 +9,8 @@ name=name.replace(" ","+")
 HEADERS={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"}
 URL=""
 flip=(f"https://www.flipkart.com/search?q={name}&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off")
+amaz = (f"https://www.amazon.in/s?k={name}&crid=2HPXEJMH5RRW7&sprefix={name}%2Caps%2C204&ref=nb_sb_noss_2")
+
     
 
 def flipkart():
@@ -126,5 +128,53 @@ def flipkart():
                         item_names = new.upper()
                         print(item_names)
                         ctr+=1
+                        
+def amazon():
+    URL=amaz
+    page = requests.get(URL, headers=HEADERS)
+    soup = BeautifulSoup(page.content, 'html.parser')
+
+    anchor = soup.findAll(class_='a-size-medium a-color-base a-text-normal')
+    ctr = 0
+    for i in anchor:
+
+        if ctr < 5:
+
+            i = str(i)
+            if "Did you mean" in i:
+                continue
+            new = i.lstrip('<span class="a-size-medium a-color-base a-text-normal">').rstrip('</span>')
+            item_names = new.upper()
+            # verification
+            search = name.upper()
+            search = search.split('+')
+            checker = 0
+
+            for i in range(len(search)):
+
+                if search[i] in item_names:
+                    checker += 1
+
+                else:
+                    break
+
+                if checker == len(search):
+                    print(item_names)
+                    ctr += 1
+
+    # incase no output, verification method is skipped
+    if ctr == 0:
+
+        for i in anchor:
+
+            if ctr < 5:
+                i = str(i)
+                new = i.lstrip('<span class="a-size-medium a-color-base a-text-normal">').rstrip('</span>')
+                item_names = new.upper()
+                print(item_names)
+                ctr += 1
+
+                        
 if __name__=="__main__":
     flipkart()
+    amazon()
