@@ -176,5 +176,7 @@ def amazon():
 
                         
 if __name__=="__main__":
+    print("These are Flipkart results: ")
     flipkart()
+    print("These are Amazon results: ")
     amazon()
