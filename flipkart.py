@@ -1,5 +1,4 @@
-import codecs
-import urllib
+
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -15,19 +14,10 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 def flipkart():
     URL=flip
     page = requests.get(URL, headers=HEADERS)
-    get=str(page.content)
-    
-
-    response = urllib.request.urlopen(URL)
-    webContent = response.read().decode('UTF-8')
-
-    f = open('search.html', 'w',encoding="utf-8")
-    f.write(webContent)
-    f.close
 
 
-    file_open = codecs.open("search.html", "r", "utf-8")
-    soup = BeautifulSoup(file_open,'html.parser')
+
+    soup = BeautifulSoup(page.content,'html.parser')
 
 
 
