@@ -2,17 +2,26 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+from pathlib import Path
+from bs4 import BeautifulSoup
+from selenium import webdriver
 
 
-# s1Q9rs #_1fQZEK
+
 name=str(input("Enter item to search: "))
 
 
 name=name.replace(' ','+')
-flip = (f"https://www.flipkart.com/search?q={name}&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off")
+
+flipkart_link = (f"https://www.flipkart.com/search?q={name}&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off")
+
+amazon_link = (f"https://www.amazon.in/s?k={name}&crid=2HPXEJMH5RRW7&sprefix={name}%2Caps%2C204&ref=nb_sb_noss_2")
+
+
+DRIVER_PATH=str(Path('chromedriver').resolve())
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36."}
 def flipkart():
-    URL=flip
+    URL=flipkart_link
     page = requests.get(URL, headers=HEADERS)
 
 
@@ -132,5 +141,7 @@ def amazon():
 
 
 if __name__ == "__main__":
+    print("These are Flipkart results: ")
     flipkart()
+    print("These are Amazon results: ")
     amazon()
