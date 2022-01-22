@@ -43,15 +43,26 @@ Or you can press **```CLOSE```** if you want to close the Compare window.
 
 To Exit, use **```EXIT```** Button.
 
-## NOTES
-* To run the file you will have to Run the ```requirement.txt``` file in your terminal
+## Run the script
+* Install dependencies: ```pip install -r requirement.txt``` in your cmd.
 
 * Or you can MANUALLY install the Libraries and Modules Used.
 
-* To Install dependencies by requirement.txt run ```pip install -r requirement.txt``` in your cmd.
-* Now to use the Program, run ```python main.py``` in your cmd.
 
-ThankYou for using our tool.
+* Run : ```python main.py``` 
+
+
+
+## Additional Note:
+* The following files are independent searching algorithms for respective e-commerce websites which can be used:
+  [amazon_searcher.py](https://github.com/shreemantolahiri/E-Commerce-Price-Comparison-Engine/blob/main/amazon_searcher.py)
+  
+  [flipkart_searcher.py](https://github.com/shreemantolahiri/E-Commerce-Price-Comparison-Engine/blob/main/flipkart_searcher.py)
+* The following file is the raw main file without the Tkinter-GUI, which runs only on python terminal:
+
+  [without_gui.py](https://github.com/shreemantolahiri/E-Commerce-Price-Comparison-Engine/blob/main/without_gui.py)
+
+Hope you liked our tool.
 
 Regards,
 
