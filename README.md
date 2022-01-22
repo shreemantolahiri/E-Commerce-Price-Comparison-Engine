@@ -23,7 +23,7 @@ The demonstration of the application has been shown below.
 
 <img width="674" alt="image" src="https://user-images.githubusercontent.com/94477450/150638373-c6bf55c5-0c06-4330-af76-6e9de9646e25.png">
 
-As soon as you click on the **```Search```** Button, you will get two drop down menus' of products to choose from.
+As soon as you click on the **```SEARCH ON STORES```** Button, you will get two drop down menus' of products to choose from.
 
 <img width="668" alt="image" src="https://user-images.githubusercontent.com/94477450/150638424-cb3d3136-f409-4f03-9391-e21ac34e60dd.png">
 
