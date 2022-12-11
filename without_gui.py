@@ -27,9 +27,6 @@ def flipkart():
 
 
     soup = BeautifulSoup(page.content,'html.parser')
-
-
-
     fin = re.compile(r'href\s?=\s?[\'"]?([^\'" >]+)')
     chck = soup.find_all('a', attrs={'target': '_blank', 'class': '_1fQZEK'})
     if len(chck)==0:
@@ -138,8 +135,6 @@ def amazon():
 
     for i in items:
         print(i)
-
-
 if __name__ == "__main__":
     print("These are Flipkart results: ")
     flipkart()
